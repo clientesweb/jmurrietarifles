@@ -62,9 +62,29 @@ export default function ContactForm() {
 
     setFormStatus("submitting")
 
-    // Simulación de envío de formulario
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      // Construct WhatsApp message
+      const message = `
+*Nuevo Contacto - J. Murrieta*
+
+*Nombre:* ${formData.name}
+*Email:* ${formData.email}
+*Teléfono:* ${formData.phone}
+*Asunto:* ${formData.subject}
+
+*Mensaje:*
+${formData.message}
+      `.trim()
+
+      // Encode message for URL
+      const encodedMessage = encodeURIComponent(message)
+
+      // WhatsApp number
+      const phoneNumber = "5493515371671"
+
+      // Open WhatsApp with the message
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank")
+
       setFormStatus("success")
       setFormData({
         name: "",
