@@ -19,7 +19,7 @@ export default function WhatsappButton() {
 
   const handleClick = () => {
     // Número de WhatsApp actualizado
-    const phoneNumber = "5493513997865"
+    const phoneNumber = "5493515371671"
     window.open(`https://wa.me/${phoneNumber}`, "_blank", "noopener,noreferrer")
   }
 
