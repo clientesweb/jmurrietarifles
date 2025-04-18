@@ -6,6 +6,7 @@ import Footer from "@/components/footer"
 import WhatsappButton from "@/components/whatsapp-button"
 import BrowsingHistory from "@/components/browsing-history"
 import PageBanner from "@/components/page-banner"
+import { CartProvider } from "@/components/cart-provider"
 
 export async function generateMetadata({ params }: { params: { productId: string } }) {
   const product = getProductById(params.productId)
@@ -43,20 +44,22 @@ export default function ProductPage({ params }: { params: { productId: string } 
   }
 
   return (
-    <>
-      <Navbar />
-      <main className="pt-20 pb-16 bg-gradient-to-b from-gray-900 to-black">
-        <PageBanner
-          title={product.name}
-          subtitle="Detalle de Producto"
-          description={product.shortDescription}
-          imageSrc={product.gallery[0]}
-        />
-        <ProductDetail product={product} />
-        <BrowsingHistory />
-      </main>
-      <Footer />
-      <WhatsappButton />
-    </>
+    <CartProvider>
+      <div className="min-h-screen bg-black text-gray-100">
+        <Navbar />
+        <main className="pt-20 pb-16">
+          <PageBanner
+            title={product.name}
+            subtitle="Detalle de Producto"
+            description={product.shortDescription}
+            imageSrc={product.gallery[0]}
+          />
+          <ProductDetail product={product} />
+          <BrowsingHistory />
+        </main>
+        <Footer />
+        <WhatsappButton />
+      </div>
+    </CartProvider>
   )
 }
