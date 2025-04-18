@@ -154,7 +154,7 @@ Notas: ${formData.notes}
     const encodedMessage = encodeURIComponent(message)
 
     // Número de WhatsApp (reemplazar con el número real)
-    const phoneNumber = "5493513997865"
+    const phoneNumber = "5493515371671"
 
     // Abrir WhatsApp con el mensaje
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank")
