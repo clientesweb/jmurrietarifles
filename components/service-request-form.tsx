@@ -99,9 +99,44 @@ export default function ServiceRequestForm() {
 
     setFormStatus("submitting")
 
-    // Simulación de envío de formulario
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      // Construct WhatsApp message
+      const message = `
+*Nueva Solicitud de Servicio Técnico - J. Murrieta*
+
+*Datos del Cliente:*
+Nombre: ${formData.name}
+Email: ${formData.email}
+Teléfono: ${formData.phone}
+
+*Datos del Rifle:*
+Modelo: ${formData.model}
+Número de serie: ${formData.serialNumber || "No especificado"}
+Fecha de compra: ${formData.purchaseDate || "No especificada"}
+
+*Tipo de Servicio:* ${
+        formData.serviceType === "maintenance"
+          ? "Mantenimiento preventivo"
+          : formData.serviceType === "repair"
+            ? "Reparación"
+            : formData.serviceType === "restoration"
+              ? "Restauración"
+              : "Otro"
+      }
+
+*Descripción:*
+${formData.description}
+      `.trim()
+
+      // Encode message for URL
+      const encodedMessage = encodeURIComponent(message)
+
+      // WhatsApp number
+      const phoneNumber = "5493515371671"
+
+      // Open WhatsApp with the message
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank")
+
       setFormStatus("success")
     } catch (error) {
       setFormStatus("error")
