@@ -4,10 +4,10 @@ import ProductShowcase from "@/components/product-showcase"
 import Testimonials from "@/components/testimonials"
 import Footer from "@/components/footer"
 import WhatsappButton from "@/components/whatsapp-button"
-import PromoBanner from "@/components/promo-banner"
-import TraditionSection from "@/components/tradition-section"
-import ProductComparison from "@/components/product-comparison"
-import Product3DSection from "@/components/product-3d-section"
+import FeaturesSection from "@/components/features-section"
+import CraftmanshipSection from "@/components/craftmanship-section"
+import PRSection from "@/components/pr-section"
+import CTASection from "@/components/cta-section"
 import SplashScreen from "@/components/splash-screen"
 
 export default function Home() {
@@ -17,12 +17,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TraditionSection />
+        <FeaturesSection />
+        <CraftmanshipSection />
         <ProductShowcase />
-        <PromoBanner />
-        <ProductComparison />
-        <Product3DSection />
+        <PRSection />
         <Testimonials />
+        <CTASection />
       </main>
       <Footer />
       <WhatsappButton />
