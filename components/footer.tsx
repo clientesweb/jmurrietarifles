@@ -24,7 +24,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="https://instagram.com/jmurrietapcp"
+                href="https://instagram.com/Jmurrietapcp"
                 target="_blank"
                 className="text-gold-500/70 hover:text-gold-500 transition-colors duration-300"
                 aria-label="Síguenos en Instagram"
@@ -111,11 +111,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-3 text-gold-500/70" aria-hidden="true" />
-                <span className="text-parchment-400 text-sm">+54 9 351 687 0117</span>
+                <span className="text-parchment-400 text-sm">+54 9 3516870117</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-3 text-gold-500/70" aria-hidden="true" />
-                <span className="text-parchment-400 text-sm">jmurrietapcp@gmail.com</span>
+                <span className="text-parchment-400 text-sm">Jmurrietapcp@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="h-4 w-4 mr-3 text-gold-500/70 mt-1" aria-hidden="true" />
